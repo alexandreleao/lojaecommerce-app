@@ -20,9 +20,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('user/{id}/edit',function($id){
+    return $id;
+})->name('users.edit');
+
+Route::get('users/{id}/destroy',function($id){
+    return $id;
+})->name('users.destroy');
+
 Route::get('/dashboard', function (UsersDataTable $dataTable) {
     return $dataTable->render('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

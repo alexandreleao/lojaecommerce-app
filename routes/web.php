@@ -4,6 +4,7 @@ use App\DataTables\UsersDataTable;
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Intervention\Image\ImageManagerStatic;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,17 @@ Route::get('users/{id}/destroy',function($id){
 Route::get('/dashboard', function (UsersDataTable $dataTable) {
     return $dataTable->render('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('image', function(){
+    $img = ImageManagerStatic::make('car2.jpeg')
+    ->fit(400, 400)
+    ->greyscale()
+    ->blur(15);
+   // $img->save('car2.jpeg',80);
+
+   return $img->response();
+});
 
 
 

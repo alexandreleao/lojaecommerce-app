@@ -436,6 +436,15 @@
                 0 => 'v10.34.2',
             ),
         ),
+        'intervention/image' => array(
+            'pretty_version' => '2.7.2',
+            'version' => '2.7.2.0',
+            'reference' => '04be355f8d6734c826045d02a1079ad658322dad',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/image',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'knplabs/knp-snappy' => array(
             'pretty_version' => 'v1.4.4',
             'version' => '1.4.4.0',

@@ -1,6 +1,7 @@
 <?php
 
 use App\DataTables\UsersDataTable;
+use App\Helpers\Filters\ImageFilter;
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -35,10 +36,10 @@ Route::get('/dashboard', function (UsersDataTable $dataTable) {
 
 
 Route::get('image', function(){
-    $img = ImageManagerStatic::make('car2.jpeg')
-    ->fit(400, 400)
-    ->greyscale()
-    ->blur(15);
+    $img = ImageManagerStatic::make('car2.jpeg');
+    
+    $img->filter(new ImageFilter(100));
+
    // $img->save('car2.jpeg',80);
 
    return $img->response();

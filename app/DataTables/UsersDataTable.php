@@ -64,7 +64,7 @@ class UsersDataTable extends DataTable
                     ->buttons([
                         Button::make('excel'),
                         Button::make('csv'),
-                       // Button::make('pdf')->action(route('gerar-pdf')),
+                        Button::make('pdf'),
                         // Button::make('print'),
                        // Button::make('reset'),
                         Button::make('reload')
